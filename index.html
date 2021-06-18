@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendece Edit and Export page</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    
 </head>
+<!-- <link rel="stylesheet" href="style.css"> -->
 <style>
     #container{
         display: flex;
@@ -35,8 +38,16 @@
     }
 </style>
 <body>
+    
+<div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">&times;</div>
+        <p>Add any HTML content<br />inside the popup box!</p>
+    </div>
+</div>
     <div class="btn">
-        <button>Export to pdf</button>
+        <button class="trigger_popup_fricc" onclick="convertPdf()">Export to pdf</button>
         <button>Edit</button>
     </div>
     <div id="container">
