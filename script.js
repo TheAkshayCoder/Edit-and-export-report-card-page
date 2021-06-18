@@ -12,6 +12,7 @@ container.appendChild(newI)
 
 
 async function convertPdf(){
+    document.getElementById('convertPdf').disabled=true;
     const response = await fetch(`https://besingularlms.herokuapp.com/convertPdf/${fullId}`)
     console.log(response)
 
