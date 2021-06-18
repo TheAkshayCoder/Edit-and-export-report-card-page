@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,7 @@
 </head>
 <!-- <link rel="stylesheet" href="style.css"> -->
 <style>
-    #container{
+    #container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,42 +19,63 @@
         width: 100%;
     }
 
-    iframe{
+    iframe {
         width: 100%;
         height: 100vh;
     }
 
-    .btn{
-        display: flex;
-        flex-direction: row;
-        /* justify-content: space-between; */
-        /* position: relative; */
-        /* top: 2.5rem; */
-        margin-bottom: 1rem;
-    }
+    
 
-    button{
-        padding:0.5rem 0.8rem ;
+    button {
+        padding: 0.5rem 0.8rem;
         background-color: rgb(132, 243, 132);
         border-radius: 0.5rem;
         margin: 1rem;
     }
-</style>
-<body>
+
+    a {
+        text-decoration: none;
+    }
+
+    #download,.btn{
+        display: none;
+    }
+
+
+    .btn.active, #download.active {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+    }
+
+    #dowload.active{
+        width: 100%;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: 800;
+    }
     
-<!-- <div class="hover_bkgr_fricc">
+</style>
+
+<body>
+    <!--  -->
+
+    <!-- <div class="hover_bkgr_fricc">
     <span class="helper"></span>
     <div>
         <div class="popupCloseButton">&times;</div>
         <p>Add any HTML content<br />inside the popup box!</p>
     </div>
 </div> -->
-    <div class="btn">
+<a id="download">Download</a>    
+<div class="btn active" id="btn">
         <button class="trigger_popup_fricc" onclick="convertPdf()">Export to pdf</button>
+        
         <button>Edit</button>
     </div>
     <div id="container">
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>

@@ -1,8 +1,11 @@
+btn.classList.add('active')
+download.classList.remove('active')
+
 const container = document.getElementById('container')
 var id = window.location.href;
-var fullId = id.substring(id.indexOf("=", 60) + 1, id.indexOf("ok", 60));
+// var fullId = id.substring(id.indexOf("=", 60) + 1, id.indexOf("ok", 60));
 console.log(container)
-// var fullId = 28
+var fullId = 28
 const newI= document.createElement('iframe')
 newI.setAttribute('src',`https://besingularlms.herokuapp.com/getStudentRecord/${fullId}`)
 container.appendChild(newI)
@@ -14,5 +17,11 @@ async function convertPdf(){
 
     if (response.status==200){
         console.log(`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
+        let download = document.getElementById('download')
+        let btn = document.getElementById('btn')
+        btn.classList.remove('active')
+        download.classList.add('active')
+        download.setAttribute('href',`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
+        download.setAttribute('target','_blank')
     }
 }
