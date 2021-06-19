@@ -3,9 +3,9 @@
 
 const container = document.getElementById('container')
 var id = window.location.href;
-var fullId = id.substring(id.indexOf("=", 60) + 1, id.indexOf("ok", 60));
+// var fullId = id.substring(id.indexOf("=", 60) + 1, id.indexOf("ok", 60));
 // console.log(container)
-// var fullId = 28
+var fullId = 28
 const newI= document.createElement('iframe')
 newI.setAttribute('src',`https://besingularlms.herokuapp.com/getStudentRecord/${fullId}`)
 container.appendChild(newI)
@@ -15,7 +15,7 @@ async function convertPdf(){
 
     document.getElementById('convertPdf').disabled=true;
     const response = await fetch(`https://besingularlms.herokuapp.com/convertPdf/${fullId}`)
-    console.log(response)
+    response
 
     if (response.status==200){
         console.log(`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
@@ -30,22 +30,19 @@ async function convertPdf(){
         const errDiv= document.createElement('div')
         errDiv.innerHTML=`<h1>Sorry, Report card not found</h1>`
         container.appendChild(errDiv)
-    } else{
-            
-            let download = document.getElementById('download')
-            let btn = document.getElementById('btn')
-            btn.classList.remove('active')
-            download.classList.add('active')
-            download.setAttribute('href',`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
-            download.setAttribute('target','_blank')
-        
+    }  else{
+        let download = document.getElementById('download')
+        let btn = document.getElementById('btn')
+        btn.classList.remove('active')
+        download.classList.add('active')
+        download.setAttribute('href',`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
+        download.setAttribute('target','_blank')
     }
-
 }
 
-let download = document.getElementById('download')
-var btn = document.getElementById('btn')
-btn.classList.remove('active')
-download.classList.add('active')
-download.setAttribute('href',`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
-download.setAttribute('target','_blank')
+// let download = document.getElementById('download')
+// var btn = document.getElementById('btn')
+// btn.classList.remove('active')
+// download.classList.add('active')
+// download.setAttribute('href',`https://besingularlms.herokuapp.com/downloadReport/${fullId}`)
+// download.setAttribute('target','_blank')
