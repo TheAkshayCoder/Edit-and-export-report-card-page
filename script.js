@@ -44,6 +44,12 @@ async function convertPdf(){
     }
 }
 
+
+function edit(){
+    document.getElementById('loader').style.display='block'
+    window.location.href=`https://theakshaycoder.github.io/Report-card-iteration-1---level-1---form-page/?id=${fullId}ok`
+}
+
 // let download = document.getElementById('download')
 // var btn = document.getElementById('btn')
 // btn.classList.remove('active')
